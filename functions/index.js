@@ -93,3 +93,6 @@ exports.sendNotification = onRequest(async (req, res) => {
   }
 
 });
+exports.logAIUsage = aiTutor.logAIUsage;
+exports.aiStatus = aiTutor.aiStatus;
+exports.getAIConfig = aiTutor.getAIConfig;
