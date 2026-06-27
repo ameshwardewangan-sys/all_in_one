@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ExamVerse AI</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:#0f172a;
+color:#fff;
+}
+
+header{
+padding:15px;
+background:#111827;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-size:18px;
+font-weight:bold;
+color:#38bdf8;
+}
+
+.container{
+padding:15px;
+}
+
+.card{
+background:#1f2937;
+padding:15px;
+border-radius:12px;
+margin-bottom:15px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:10px;
+}
+
+.btn{
+padding:10px;
+background:#38bdf8;
+border:none;
+border-radius:8px;
+color:#000;
+font-weight:bold;
+}
+
+.small{
+font-size:12px;
+opacity:0.8;
+}
+
+/* Weather styles */
+.weatherBox{
+background:linear-gradient(135deg,#0ea5e9,#22c55e);
+padding:15px;
+border-radius:12px;
+color:#000;
+}
+
+.map{
+height:180px;
+background:#e2e8f0;
+border-radius:10px;
+display:flex;
+align-items:center;
+justify-content:center;
+color:#000;
+font-weight:bold;
+}
+
+.examCard{
+background:#111827;
+padding:12px;
+border-radius:10px;
+margin-top:10px;
+}
+</style>
+
+</head>
+<body>
+
+<header>
+<div class="logo">📘 ExamVerse AI</div>
+<div>👑 Owner Panel</div>
+</header>
+
+<div class="container">
+
+<!-- Weather Module -->
+<div class="weatherBox">
+<h2>🌦️ India Weather Live</h2>
+<div class="map">🗺️ India Rain Map Loading...</div>
+<p class="small">Live rain, temperature & storm updates</p>
+
+<div class="grid">
+<button class="btn">🌧️ Rain Map</button>
+<button class="btn">🌡️ Temperature</button>
+<button class="btn">🌪️ Alerts</button>
+<button class="btn">📍 City Weather</button>
+</div>
+</div>
+
+<!-- Exam Dashboard -->
+<div class="card">
+<h2>📚 Government Exams</h2>
+<div class="small">All India Exam Preparation Hub</div>
+
+<div class="examCard">UPSC • SSC • Railway • Banking</div>
+<div class="examCard">UPPSC • BPSC • MPPSC • RPSC</div>
+<div class="examCard">Police • Defence • Teaching Exams</div>
+</div>
+
+<!-- Quick AI -->
+<div class="card">
+<h2>🤖 AI Assistant</h2>
+<div class="small">Ask anything about exams, career, or study</div>
+<button class="btn">Start AI Chat</button>
+</div>
+
+</div>
+
+</body>
+</html>
+<!-- ===================== DASHBOARD SECTION ===================== -->
+
+<div class="container">
+
+<!-- Quick Stats -->
+<div class="card">
+<h2>📊 Live Dashboard</h2>
+<div class="grid">
+<div class="examCard">
+👥 Users<br>
+<b>12,450</b>
+</div>
+
+<div class="examCard">
+📥 Downloads<br>
+<b>8,120</b>
+</div>
+
+<div class="examCard">
+🟢 Active<br>
+<b>1,980</b>
+</div>
+
+<div class="examCard">
+🔥 Today Quiz<br>
+<b>32</b>
+</div>
+</div>
+</div>
+
+<!-- Exam Categories -->
+<div class="card">
+<h2>🎯 Exam Categories</h2>
+
+<div class="grid">
+<button class="btn">UPSC</button>
+<button class="btn">SSC</button>
+<button class="btn">Railway</button>
+<button class="btn">Banking</button>
+<button class="btn">Police</button>
+<button class="btn">Defence</button>
+<button class="btn">Teaching</button>
+<button class="btn">State PSC</button>
+</div>
+
+</div>
+
+<!-- State Exams -->
+<div class="card">
+<h2>🏛️ State Exams</h2>
+
+<div class="examCard">UP • Bihar • MP • Rajasthan</div>
+<div class="examCard">Haryana • Jharkhand • Gujarat</div>
+<div class="examCard">WB • Maharashtra • Chhattisgarh</div>
+<div class="examCard">DSSSB • GPSC • WBCS • JSSC</div>
+</div>
+
+<!-- PYQ Section -->
+<div class="card">
+<h2>📄 Previous Year Papers</h2>
+
+<div class="small">Year-wise exam papers available</div>
+
+<div class="grid">
+<button class="btn">2025</button>
+<button class="btn">2024</button>
+<button class="btn">2023</button>
+<button class="btn">More</button>
+</div>
+</div>
+
+</div>
+
+<!-- ===================== END PART 2 ===================== -->
+<!-- ===================== AI + LEARNING SECTION ===================== -->
+
+<div class="container">
+
+<!-- AI Hub -->
+<div class="card">
+<h2>🤖 AI Learning Hub</h2>
+<div class="small">Your smart study assistant</div>
+
+<div class="grid">
+<button class="btn">AI Tutor</button>
+<button class="btn">Doubt Solver</button>
+<button class="btn">Mock Generator</button>
+<button class="btn">Study Planner</button>
+</div>
+</div>
+
+<!-- AI Camera Feature -->
+<div class="card">
+<h2>📸 AI Camera Assistant</h2>
+<div class="small">Scan question or form to get help</div>
+
+<div class="examCard">
+✔️ Solve MCQ from image<br>
+✔️ Form filling guidance<br>
+✔️ Document understanding
+</div>
+
+<button class="btn">Open Camera AI</button>
+</div>
+
+<!-- Career Section -->
+<div class="card">
+<h2>💼 Career & Skills</h2>
+
+<div class="grid">
+<button class="btn">Computer Basics</button>
+<button class="btn">Coding</button>
+<button class="btn">Banking</button>
+<button class="btn">Government Jobs</button>
+</div>
+
+<div class="examCard">
+IT • Healthcare • Police • Banking • Railway • Defence • Industry Guide
+</div>
+</div>
+
+<!-- Apply Section -->
+<div class="card">
+<h2>📝 Apply for Exams</h2>
+
+<div class="examCard">
+Find official application links for all exams
+</div>
+
+<div class="grid">
+<button class="btn">Latest Vacancy</button>
+<button class="btn">Apply Now</button>
+<button class="btn">Eligibility</button>
+<button class="btn">Last Date</button>
+</div>
+</div>
+
+</div>
+
+<!-- ===================== END PART 3 ===================== -->
+<!-- ===================== WEATHER DETAIL + ALERT SYSTEM ===================== -->
+
+<div class="container">
+
+<!-- Weather Detail -->
+<div class="weatherBox">
+<h2>🗺️ India Weather Intelligence</h2>
+
+<div class="map">
+🌧️ Live Rain Radar Map (India)
+</div>
+
+<p class="small">
+Click any state to see live rain, temperature & alerts
+</p>
+
+<div class="grid">
+<button class="btn">🌧️ Rain Radar</button>
+<button class="btn">🌡️ Heat Map</button>
+<button class="btn">🌪️ Storm Alerts</button>
+<button class="btn">📊 Forecast</button>
+</div>
+</div>
+
+<!-- City Weather -->
+<div class="card">
+<h2>📍 City Weather Report</h2>
+
+<div class="examCard">
+Delhi • 🌡️ 34°C • 🌧️ 20% chance
+</div>
+
+<div class="examCard">
+Mumbai • 🌡️ 30°C • 🌧️ Heavy clouds
+</div>
+
+<div class="examCard">
+Kolkata • 🌡️ 32°C • 🌧️ Moderate rain
+</div>
+
+<div class="examCard">
+Chennai • 🌡️ 33°C • ☀️ Clear
+</div>
+</div>
+
+<!-- Exam Day Weather Predictor -->
+<div class="card">
+<h2>📅 Exam Day Weather Predictor</h2>
+
+<div class="small">
+Check weather on your exam date
+</div>
+
+<div class="examCard">
+Select Exam → Get Weather Forecast + Safety Tips
+</div>
+
+<button class="btn">Check Exam Weather</button>
+</div>
+
+<!-- Alerts -->
+<div class="card">
+<h2>⚠️ Important Alerts</h2>
+
+<div class="examCard">🔴 Heavy Rain Alert: UP & Bihar</div>
+<div class="examCard">🟠 Heatwave Warning: Rajasthan</div>
+<div class="examCard">🟡 Storm Alert: Odisha Coast</div>
+
+</div>
+
+</div>
+
+<!-- ===================== END PART 4 ===================== -->
+<!-- ===================== OWNER + SECURITY + FOOTER ===================== -->
+
+<div class="container">
+
+<!-- Owner Dashboard -->
+<div class="card">
+<h2>👑 Owner Dashboard</h2>
+
+<div class="small">
+Private control panel (Only Owner Access)
+</div>
+
+<div class="grid">
+<button class="btn">📊 Analytics</button>
+<button class="btn">👥 Users Report</button>
+<button class="btn">📥 Downloads</button>
+<button class="btn">💰 Revenue</button>
+<button class="btn">📢 Notifications</button>
+<button class="btn">⚙️ Settings</button>
+<button class="btn">🧠 AI Control</button>
+<button class="btn">🔒 Security Logs</button>
+</div>
+</div>
+
+<!-- User Info Panel -->
+<div class="card">
+<h2>👤 User Tracking (Owner View)</h2>
+
+<div class="examCard">
+User ID • Progress • Exam Selected • Last Active
+</div>
+
+<div class="examCard">
+Coins • XP Level • Mock Test Score • Downloads
+</div>
+
+<div class="small">
+Privacy protected system (only necessary data shown)
+</div>
+</div>
+
+<!-- Super Admin System -->
+<div class="card">
+<h2>🛡️ Super Admin System</h2>
+
+<div class="examCard">
+Role-based access: Owner / Admin / Moderator / User
+</div>
+
+<div class="grid">
+<button class="btn">Manage Users</button>
+<button class="btn">Manage Content</button>
+<button class="btn">Ban System</button>
+<button class="btn">Backup</button>
+</div>
+</div>
+
+<!-- Security -->
+<div class="card">
+<h2>🔒 Security System</h2>
+
+<div class="examCard">
+✔ Firebase Auth<br>
+✔ Role-based Access<br>
+✔ Encrypted Data<br>
+✔ Activity Logs<br>
+✔ Auto Backup
+</div>
+</div>
+
+<!-- Final AI Chat -->
+<div class="card">
+<h2>🤖 AI Chat Assistant</h2>
+
+<div class="small">
+Ask anything: Exams • Career • Computer • Weather • Jobs
+</div>
+
+<button class="btn">Start Chat AI</button>
+</div>
+
+<!-- Footer -->
+<div class="card">
+<h2>🚀 ExamVerse AI</h2>
+
+<div class="small">
+One Platform • Every Exam • Every Skill • AI Powered Learning
+</div>
+
+<div class="examCard">
+© 2026 ExamVerse AI | Built for Government Exam Preparation
+</div>
+</div>
+
+</div>
+
+</body>
+</html>
