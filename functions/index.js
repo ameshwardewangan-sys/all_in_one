@@ -102,3 +102,7 @@ exports.updateTypingStatus = aiChat.updateTypingStatus;
 exports.markMessagesRead = aiChat.markMessagesRead;
 exports.getConversation = aiChat.getConversation;
 exports.checkRateLimit = aiChat.checkRateLimit;
+exports.chatAnalytics = aiChat.chatAnalytics;
+exports.getConversationSummary = aiChat.getConversationSummary;
+exports.moderateMessage = aiChat.moderateMessage;
+exports.chatConfig = aiChat.chatConfig;
