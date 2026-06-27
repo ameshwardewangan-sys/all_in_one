@@ -138,3 +138,40 @@ exports.evaluateMockTest = mockTests.evaluateMockTest;
 exports.mockAnalytics = mockTests.mockAnalytics;
 exports.deleteMockTest = mockTests.deleteMockTest;
 exports.mockHealth = mockTests.mockHealth;
+const currentAffairs = require("./current-affairs");
+‎
+‎exports.currentAffairsStatus = currentAffairs.currentAffairsStatus;
+‎exports.addCurrentAffair = currentAffairs.addCurrentAffair;
+‎exports.getCurrentAffairs = currentAffairs.getCurrentAffairs;
+‎exports.deleteCurrentAffair = currentAffairs.deleteCurrentAffair;
+‎exports.getByCategory = currentAffairs.getByCategory;
+‎exports.searchCurrentAffairs = currentAffairs.searchCurrentAffairs;
+‎exports.currentAffairsAnalytics = currentAffairs.currentAffairsAnalytics;
+‎const notifications = require("./notifications");
+‎
+‎exports.notificationStatus = notifications.notificationStatus;
+‎exports.sendUserNotification = notifications.sendUserNotification;
+‎exports.getUserNotifications = notifications.getUserNotifications;
+‎exports.markAsRead = notifications.markAsRead;
+‎exports.deleteNotification = notifications.deleteNotification;
+‎exports.broadcastNotification = notifications.broadcastNotification;
+‎exports.notificationAnalytics = notifications.notificationAnalytics;
+‎const adminModule = require("./admin");
+‎
+‎exports.adminStatus = adminModule.adminStatus;
+‎exports.createAdmin = adminModule.createAdmin;
+‎exports.getAdminRole = adminModule.getAdminRole;
+‎exports.toggleUserBan = adminModule.toggleUserBan;
+‎exports.deleteContent = adminModule.deleteContent;
+‎exports.getSystemLogs = adminModule.getSystemLogs;
+‎exports.addSystemLog = adminModule.addSystemLog;
+‎const ownerModule = require("./owner");
+‎
+‎exports.ownerStatus = ownerModule.ownerStatus;
+‎exports.getPlatformStats = ownerModule.getPlatformStats;
+‎exports.getAllUsers = ownerModule.getAllUsers;
+‎exports.deleteUser = ownerModule.deleteUser;
+‎exports.aiUsageAnalytics = ownerModule.aiUsageAnalytics;
+‎exports.toggleFeature = ownerModule.toggleFeature;
+‎exports.resetSystem = ownerModule.resetSystem;
+‎
