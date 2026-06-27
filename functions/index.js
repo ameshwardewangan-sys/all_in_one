@@ -121,4 +121,12 @@ exports.ocrHealth = aiOCR.ocrHealth;
 exports.voiceStatus = aiVoice.voiceStatus;
 exports.speechToText = aiVoice.speechToText;
 exports.textToSpeech = aiVoice.textToSpeech;
-
+exports.voiceQuiz = aiVoice.voiceQuiz;
+exports.voiceCommand = aiVoice.voiceCommand;
+exports.getVoiceHistory = aiVoice.getVoiceHistory;
+exports.deleteVoiceJob = aiVoice.deleteVoiceJob;
+exports.voiceAnalytics = aiVoice.voiceAnalytics;
+exports.getVoiceConfig = aiVoice.getVoiceConfig;
+exports.checkPronunciation = aiVoice.checkPronunciation;
+exports.voiceAssistant = aiVoice.voiceAssistant;
+exports.voiceHealth = aiVoice.voiceHealth;
