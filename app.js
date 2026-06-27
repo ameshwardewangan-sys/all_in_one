@@ -3,6 +3,32 @@
 //////////////////////////////////////////////////////
 
 // ================= USER DATA =================
+import { initializeApp } from "firebase/app";
+import {
+  getAuth,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword
+} from "firebase/auth";
+
+import {
+  getFirestore
+} from "firebase/firestore";
+
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_PROJECT.firebaseapp.com",
+  projectId: "examverse-ai-india",
+  storageBucket: "YOUR_PROJECT.appspot.com",
+  messagingSenderId: "XXXX",
+  appId: "XXXX"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+export const auth = getAuth(app);
+export const db = getFirestore(app);
 let user = {
   name: "Guest",
   coins: 0,
@@ -96,3 +122,64 @@ function initApp() {
 }
 
 initApp();
+const BASE_URL = "https://us-central1-examverse-ai-india.cloudfunctions.net";
+export async function askAI(question, userId) {
+
+  const res = await fetch(`${BASE_URL}/askAI`, {
+
+    method: "POST",
+
+    headers: { "Content-Type": "application/json" },
+
+    body: JSON.stringify({ question, userId })
+
+  });
+
+  return await res.json();
+}
+export async function getMockTests() {
+
+  const res = await fetch(`${BASE_URL}/getMockTests`);
+
+  return await res.json();
+}
+export async function uploadOCR(userId, fileName) {
+
+  const res = await fetch(`${BASE_URL}/uploadOCR`, {
+
+    method: "POST",
+
+    headers: { "Content-Type": "application/json" },
+
+    body: JSON.stringify({ userId, fileName })
+
+  });
+
+  return await res.json();
+}
+export async function speechToText(userId, audioFile) {
+
+  const res = await fetch(`${BASE_URL}/speechToText`, {
+
+    method: "POST",
+
+    headers: { "Content-Type": "application/json" },
+
+    body: JSON.stringify({ userId, audioFile })
+
+  });
+
+  return await res.json();
+}
+export async function getCurrentAffairs() {
+
+  const res = await fetch(`${BASE_URL}/getCurrentAffairs`);
+
+  return await res.json();
+}
+export async function getNotifications(userId) {
+
+  const res = await fetch(`${BASE_URL}/getUserNotifications?userId=${userId}`);
+
+  return await res.json();
+}
