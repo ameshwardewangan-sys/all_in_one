@@ -3,8 +3,9 @@
  * Cloud Functions
  * Production Base
  */
-const aiChat = require("./ai-chat");
 
+const aiOCR = require("./ai-ocr");
+const aiChat = require("./ai-chat");
 const { onRequest } = require("firebase-functions/v2/https");
 const logger = require("firebase-functions/logger");
 const admin = require("firebase-admin");
@@ -106,3 +107,6 @@ exports.chatAnalytics = aiChat.chatAnalytics;
 exports.getConversationSummary = aiChat.getConversationSummary;
 exports.moderateMessage = aiChat.moderateMessage;
 exports.chatConfig = aiChat.chatConfig;
+exports.ocrStatus = aiOCR.ocrStatus;
+exports.uploadOCR = aiOCR.uploadOCR;
+exports.getOCRJobs = aiOCR.getOCRJobs;
