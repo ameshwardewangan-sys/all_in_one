@@ -60,7 +60,34 @@ exports.askAI = onRequest(async (req, res) => {
        FAKE AI RESPONSE (Replace later with Gemini/OpenAI)
     ========================================== */
 
-    const aiResponse = `(${mode || "general"}) Answer: ${question}`;
+    const API_KEY = "YOUR_GEMINI_API_KEY";
+
+const prompt = `${systemPrompt}\n\nUser Question: ${question}`;
+
+const response = await fetch(
+  `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`,
+  {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      contents: [
+        {
+          parts: [
+            { text: prompt }
+          ]
+        }
+      ]
+    })
+  }
+);
+
+const data = await response.json();
+
+const aiResponse =
+  data?.candidates?.[0]?.content?.parts?.[0]?.text ||
+  "AI not responding";
 
     /* ==========================================
        SAVE USAGE LOG
