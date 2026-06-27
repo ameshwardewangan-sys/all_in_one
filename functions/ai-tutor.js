@@ -224,3 +224,27 @@ exports.getAIConfig = onRequest(async (req, res) => {
   });
 
 });
+exports.ocrAI = onRequest(async (req, res) => {
+
+  try {
+
+    const { image } = req.body;
+
+    // अभी simple response (future: real OCR connect)
+    const answer = "OCR detected question will be solved by AI (integration pending)";
+
+    res.json({
+      success: true,
+      answer
+    });
+
+  } catch (error) {
+
+    res.status(500).json({
+      success: false,
+      error: error.message
+    });
+
+  }
+
+});
