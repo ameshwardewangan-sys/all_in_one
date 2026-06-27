@@ -311,4 +311,180 @@ exports.getLeaderboard = onRequest(async (req, res) => {
   }
 
 });
+/* ==========================================
+   Auto Evaluation (Basic Engine)
+========================================== */
 
+exports.evaluateMockTest = onRequest(async (req, res) => {
+
+  try {
+
+    const {
+
+      answers,
+
+      correctAnswers
+
+    } = req.body;
+
+    if (!answers || !correctAnswers) {
+
+      return res.status(400).json({
+
+        success: false,
+
+        message: "Answers and correctAnswers required."
+
+      });
+
+    }
+
+    let score = 0;
+
+    let total = correctAnswers.length;
+
+    for (let i = 0; i < total; i++) {
+
+      if (answers[i] === correctAnswers[i]) {
+
+        score++;
+
+      }
+
+    }
+
+    res.json({
+
+      success: true,
+
+      score,
+
+      total,
+
+      percentage: (score / total) * 100
+
+    });
+
+  } catch (error) {
+
+    res.status(500).json({
+
+      success: false,
+
+      error: error.message
+
+    });
+
+  }
+
+});
+
+
+/* ==========================================
+   Mock Test Analytics
+========================================== */
+
+exports.mockAnalytics = onRequest(async (req, res) => {
+
+  try {
+
+    const testsSnap = await db.collection("mock_tests").get();
+
+    const resultsSnap = await db.collection("mock_results").get();
+
+    res.json({
+
+      success: true,
+
+      totalTests: testsSnap.size,
+
+      totalAttempts: resultsSnap.size
+
+    });
+
+  } catch (error) {
+
+    res.status(500).json({
+
+      success: false,
+
+      error: error.message
+
+    });
+
+  }
+
+});
+
+
+/* ==========================================
+   Delete Mock Test
+========================================== */
+
+exports.deleteMockTest = onRequest(async (req, res) => {
+
+  try {
+
+    const { testId } = req.body;
+
+    if (!testId) {
+
+      return res.status(400).json({
+
+        success: false,
+
+        message: "testId required"
+
+      });
+
+    }
+
+    await db.collection("mock_tests").doc(testId).delete();
+
+    res.json({
+
+      success: true,
+
+      message: "Mock test deleted"
+
+    });
+
+  } catch (error) {
+
+    res.status(500).json({
+
+      success: false,
+
+      error: error.message
+
+    });
+
+  }
+
+});
+
+
+/* ==========================================
+   Mock Health Check
+========================================== */
+
+exports.mockHealth = onRequest(async (req, res) => {
+
+  res.json({
+
+    success: true,
+
+    service: "Mock Test Engine",
+
+    status: "Healthy",
+
+    timestamp: Date.now()
+
+  });
+
+});
+
+
+/* ==========================================
+   End Mock Tests Module
+========================================== */
