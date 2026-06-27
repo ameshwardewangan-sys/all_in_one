@@ -3,6 +3,7 @@
  * Cloud Functions
  * Production Base
  */
+const mockTests = require("./mock-tests");
 const aiVoice = require("./ai-voice");
 const aiOCR = require("./ai-ocr");
 const aiChat = require("./ai-chat");
@@ -130,3 +131,6 @@ exports.getVoiceConfig = aiVoice.getVoiceConfig;
 exports.checkPronunciation = aiVoice.checkPronunciation;
 exports.voiceAssistant = aiVoice.voiceAssistant;
 exports.voiceHealth = aiVoice.voiceHealth;
+exports.submitMockTest = mockTests.submitMockTest;
+exports.getMockResults = mockTests.getMockResults;
+exports.getLeaderboard = mockTests.getLeaderboard;
