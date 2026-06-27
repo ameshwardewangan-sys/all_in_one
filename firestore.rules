@@ -1,1 +1,113 @@
+rules_version = '2';
 
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function userRole() {
+      return get(
+        /databases/$(database)/documents/users/$(request.auth.uid)
+      ).data.role;
+    }
+
+    function isOwner() {
+      return signedIn() && userRole() == "owner";
+    }
+
+    function isSuperAdmin() {
+      return signedIn() && userRole() == "super_admin";
+    }
+
+    function isAdmin() {
+      return signedIn() && userRole() == "admin";
+    }
+
+    function isModerator() {
+      return signedIn() && userRole() == "moderator";
+    }
+
+    function isStaff() {
+      return isOwner()
+        || isSuperAdmin()
+        || isAdmin()
+        || isModerator();
+    }
+
+    /* ---------------- Users ---------------- */
+
+    match /users/{userId} {
+
+      allow read, update:
+        if signedIn() &&
+        request.auth.uid == userId;
+
+      allow create:
+        if signedIn();
+
+      allow delete:
+        if isOwner();
+
+      match /chat_history/{chatId} {
+        allow read, write:
+          if signedIn() &&
+          request.auth.uid == userId;
+      }
+
+      match /notifications/{id} {
+        allow read, write:
+          if signedIn() &&
+          request.auth.uid == userId;
+      }
+
+    }
+
+    /* ---------------- Current Affairs ---------------- */
+
+    match /current_affairs/{id} {
+
+      allow read:
+        if true;
+
+      allow write:
+        if isStaff();
+
+    }
+
+    /* ---------------- Mock Tests ---------------- */
+
+    match /mock_tests/{id} {
+
+      allow read:
+        if true;
+
+      allow write:
+        if isStaff();
+
+    }
+
+    /* ---------------- Activity Logs ---------------- */
+
+    match /activity_logs/{id} {
+
+      allow create:
+        if signedIn();
+
+      allow read:
+        if isStaff();
+
+      allow update, delete:
+        if isOwner();
+
+    }
+
+    /* ---------------- Default ---------------- */
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+  }
+}
