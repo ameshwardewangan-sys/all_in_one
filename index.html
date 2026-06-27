@@ -248,7 +248,23 @@ button:hover {
 <button class="btn">📍 City Weather</button>
 </div>
 </div>
+<!-- =========================
+     OCR UPLOAD SECTION
+========================= -->
 
+<div id="ocrScreen" style="display:none;padding:15px;">
+
+  <h2>OCR Scanner 📄</h2>
+
+  <p>Upload question image</p>
+
+  <input type="file" id="imageInput" accept="image/*">
+
+  <button onclick="uploadImage()">Extract & Solve</button>
+
+  <div id="ocrResult" style="margin-top:15px;"></div>
+
+</div>
 <!-- Exam Dashboard -->
 <!-- =========================
      DASHBOARD HEADER
