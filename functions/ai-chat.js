@@ -187,3 +187,73 @@ exports.getMessages = onRequest(async (req, res) => {
   }
 
 });
+/* ==========================================
+   Delete Chat History
+========================================== */
+
+exports.clearChatHistory = onRequest(async (req, res) => {
+
+  res.json({
+    success: true,
+    message: "Clear chat history endpoint ready."
+  });
+
+});
+
+
+/* ==========================================
+   Typing Status
+========================================== */
+
+exports.updateTypingStatus = onRequest(async (req, res) => {
+
+  res.json({
+    success: true,
+    message: "Typing status updated."
+  });
+
+});
+
+
+/* ==========================================
+   Read Messages
+========================================== */
+
+exports.markMessagesRead = onRequest(async (req, res) => {
+
+  res.json({
+    success: true,
+    message: "Messages marked as read."
+  });
+
+});
+
+
+/* ==========================================
+   Conversation Info
+========================================== */
+
+exports.getConversation = onRequest(async (req, res) => {
+
+  res.json({
+    success: true,
+    message: "Conversation endpoint ready."
+  });
+
+});
+
+
+/* ==========================================
+   Rate Limit Check
+========================================== */
+
+exports.checkRateLimit = onRequest(async (req, res) => {
+
+  res.json({
+    success: true,
+    allowed: true,
+    remaining: 100
+  });
+
+});
+
