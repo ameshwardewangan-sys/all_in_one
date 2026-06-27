@@ -124,3 +124,126 @@ exports.textToSpeech = onRequest(async (req, res) => {
   }
 
 });
+/* ==========================================
+   Voice Quiz Mode
+========================================== */
+
+exports.voiceQuiz = onRequest(async (req, res) => {
+
+  res.json({
+
+    success: true,
+
+    message: "Voice Quiz Mode Ready."
+
+  });
+
+});
+
+
+/* ==========================================
+   Voice Commands
+========================================== */
+
+exports.voiceCommand = onRequest(async (req, res) => {
+
+  const { command } = req.body;
+
+  res.json({
+
+    success: true,
+
+    command: command || "",
+
+    message: "Voice command processed."
+
+  });
+
+});
+
+
+/* ==========================================
+   Voice History
+========================================== */
+
+exports.getVoiceHistory = onRequest(async (req, res) => {
+
+  try {
+
+    const snapshot = await db
+      .collection("voice_jobs")
+      .orderBy("createdAt", "desc")
+      .limit(100)
+      .get();
+
+    const history = [];
+
+    snapshot.forEach(doc => {
+
+      history.push({
+
+        id: doc.id,
+
+        ...doc.data()
+
+      });
+
+    });
+
+    res.json({
+
+      success: true,
+
+      history
+
+    });
+
+  } catch (error) {
+
+    res.status(500).json({
+
+      success: false,
+
+      error: error.message
+
+    });
+
+  }
+
+});
+
+
+/* ==========================================
+   Delete Voice Job
+========================================== */
+
+exports.deleteVoiceJob = onRequest(async (req, res) => {
+
+  res.json({
+
+    success: true,
+
+    message: "Delete Voice Job endpoint ready."
+
+  });
+
+});
+
+
+/* ==========================================
+   Voice Analytics
+========================================== */
+
+exports.voiceAnalytics = onRequest(async (req, res) => {
+
+  const jobs = await db.collection("voice_jobs").get();
+
+  res.json({
+
+    success: true,
+
+    totalVoiceJobs: jobs.size
+
+  });
+
+});
