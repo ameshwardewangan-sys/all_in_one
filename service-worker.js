@@ -519,7 +519,13 @@ cleanupOldCaches();
 console.log(
     "ExamVerse AI Service Worker v1.0.0 Loaded Successfully"
 );
+self.addEventListener("install", () => {
+  console.log("Service Worker Installed");
+});
 
+self.addEventListener("fetch", event => {
+  console.log("Fetch:", event.request.url);
+});
 /* ==========================================
    END OF SERVICE WORKER
 ========================================== */
