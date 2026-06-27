@@ -1,1 +1,129 @@
+{
+  "name": "ExamVerse AI",
+  "short_name": "ExamVerse",
+  "description": "Government Exam Super App powered by AI. Learn, Practice, Prepare & Succeed.",
+  "lang": "en-IN",
+  "dir": "ltr",
 
+  "start_url": "./index.html",
+  "scope": "./",
+
+  "display": "standalone",
+  "orientation": "portrait-primary",
+
+  "background_color": "#0f172a",
+  "theme_color": "#2563eb",
+
+  "categories": [
+    "education",
+    "productivity",
+    "books",
+    "utilities"
+  ],
+
+  "id": "/",
+
+  "prefer_related_applications": false,
+
+  "icons": [
+    {
+      "src": "assets/icons/icon-72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/icon-96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/icon-128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/icon-144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/icon-152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/icons/icon-384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+
+  "shortcuts": [
+    {
+      "name": "Mock Tests",
+      "short_name": "Mock",
+      "url": "./index.html#mock-tests",
+      "icons": [
+        {
+          "src": "assets/icons/mock.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "AI Tutor",
+      "short_name": "Tutor",
+      "url": "./index.html#ai-tutor",
+      "icons": [
+        {
+          "src": "assets/icons/tutor.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Current Affairs",
+      "short_name": "News",
+      "url": "./index.html#current-affairs",
+      "icons": [
+        {
+          "src": "assets/icons/news.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ],
+
+  "screenshots": [
+    {
+      "src": "assets/screenshots/home.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "assets/screenshots/dashboard.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ]
+}
