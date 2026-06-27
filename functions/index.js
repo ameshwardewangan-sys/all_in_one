@@ -3,6 +3,7 @@
  * Cloud Functions
  * Production Base
  */
+const aiChat = require("./ai-chat");
 
 const { onRequest } = require("firebase-functions/v2/https");
 const logger = require("firebase-functions/logger");
