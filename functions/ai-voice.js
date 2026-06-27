@@ -247,3 +247,114 @@ exports.voiceAnalytics = onRequest(async (req, res) => {
   });
 
 });
+/* ==========================================
+   Voice Configuration
+========================================== */
+
+exports.getVoiceConfig = onRequest(async (req, res) => {
+
+  res.json({
+
+    success: true,
+
+    config: {
+
+      maxAudioSizeMB: 25,
+
+      supportedFormats: [
+
+        "mp3",
+
+        "wav",
+
+        "m4a",
+
+        "ogg"
+
+      ],
+
+      supportedLanguages: [
+
+        "English",
+
+        "Hindi"
+
+      ],
+
+      voiceEngine: "AI Voice"
+
+    }
+
+  });
+
+});
+
+
+/* ==========================================
+   Pronunciation Check
+========================================== */
+
+exports.checkPronunciation = onRequest(async (req, res) => {
+
+  const { text } = req.body;
+
+  res.json({
+
+    success: true,
+
+    input: text || "",
+
+    score: 95,
+
+    feedback: "Pronunciation analysis endpoint ready."
+
+  });
+
+});
+
+
+/* ==========================================
+   AI Voice Assistant
+========================================== */
+
+exports.voiceAssistant = onRequest(async (req, res) => {
+
+  const { query } = req.body;
+
+  res.json({
+
+    success: true,
+
+    query: query || "",
+
+    response: "Voice Assistant endpoint is ready."
+
+  });
+
+});
+
+
+/* ==========================================
+   Voice Health
+========================================== */
+
+exports.voiceHealth = onRequest(async (req, res) => {
+
+  res.json({
+
+    success: true,
+
+    service: "ExamVerse AI Voice",
+
+    status: "Healthy",
+
+    timestamp: Date.now()
+
+  });
+
+});
+
+
+/* ==========================================
+   End Voice Module
+========================================== */
