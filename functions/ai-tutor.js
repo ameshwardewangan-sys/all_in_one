@@ -248,3 +248,30 @@ exports.ocrAI = onRequest(async (req, res) => {
   }
 
 });
+await db.collection("ai_memory").add({
+  userId: userId || "guest",
+  question,
+  answer: aiResponse,
+  mode: mode || "general",
+  createdAt: admin.firestore.FieldValue.serverTimestamp()
+});
+exports.getAIMemory = onRequest(async (req, res) => {
+
+  const { userId } = req.body;
+
+  const snap = await db.collection("ai_memory")
+    .where("userId", "==", userId)
+    .orderBy("createdAt", "desc")
+    .limit(20)
+    .get();
+
+  let history = [];
+
+  snap.forEach(doc => history.push(doc.data()));
+
+  res.json({
+    success: true,
+    history
+  });
+
+});
