@@ -87,7 +87,44 @@ margin-top:10px;
 
 </head>
 <body>
+<!-- =========================
+     LOGIN SCREEN
+========================= -->
 
+<div id="loginScreen" style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;background:#0f172a;color:white;">
+
+  <h1>ExamVerse AI</h1>
+
+  <input id="email" placeholder="Email" style="padding:10px;margin:5px;width:250px;">
+  <input id="password" type="password" placeholder="Password" style="padding:10px;margin:5px;width:250px;">
+
+  <button onclick="loginUser()" style="padding:10px 20px;margin-top:10px;">Login</button>
+
+  <button onclick="registerUser()" style="padding:10px 20px;margin-top:10px;">Register</button>
+
+</div>
+
+
+<!-- =========================
+     DASHBOARD
+========================= -->
+
+<div id="dashboard" style="display:none;">
+
+  <h2>Welcome to ExamVerse AI 🚀</h2>
+
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;padding:10px;">
+
+    <button onclick="openAI()">AI Tutor</button>
+    <button onclick="openMockTests()">Mock Tests</button>
+    <button onclick="openOCR()">OCR Scanner</button>
+    <button onclick="openVoice()">Voice AI</button>
+    <button onclick="openCurrentAffairs()">Current Affairs</button>
+    <button onclick="openNotifications()">Notifications</button>
+
+  </div>
+
+</div>
 <header>
 <div class="logo">📘 ExamVerse AI</div>
 <div>👑 Owner Panel</div>
