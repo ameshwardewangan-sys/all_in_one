@@ -69,3 +69,5 @@
   ],
   "fieldOverrides": []
 }
+const questions = []; // later Firebase se load karna
+await db.collection("mock_tests").get();
