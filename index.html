@@ -176,17 +176,18 @@ button:hover {
 <!-- =========================
      DASHBOARD
 ========================= -->
-<div style="padding:10px;text-align:center;">
+<h2 style="padding:10px;">Dashboard</h2>
 
-  <button onclick="setMode('general')">General</button>
-  <button onclick="setMode('ssc')">SSC</button>
-  <button onclick="setMode('railway')">Railway</button>
-  <button onclick="setMode('banking')">Banking</button>
-  <button onclick="setMode('hindi')">Hindi</button>
+<div style="padding:10px;display:grid;gap:10px;">
+
+  <button>🤖 AI Tutor</button>
+  <button>📝 Mock Tests</button>
+  <button>📄 OCR Scanner</button>
+  <button>🎤 Voice AI</button>
+  <button>📰 Current Affairs</button>
+  <button>🔔 Notifications</button>
 
 </div>
-<div id="dashboard" style="display:none;">
-
   <h2>Welcome to ExamVerse AI 🚀</h2>
 
   <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;padding:10px;">
@@ -204,7 +205,9 @@ button:hover {
 <!-- =========================
      AI CHAT SCREEN
 ========================= -->
-
+<button onclick="startVoice()" style="padding:10px 15px;margin-left:5px;">
+🎤
+</button>
 <div id="aiChatScreen" style="display:none;flex-direction:column;height:100vh;">
 
   <!-- HEADER -->
