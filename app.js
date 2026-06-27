@@ -264,7 +264,10 @@ window.sendMessage = async function () {
       </span>
     </div>
   `;
-
+const speech = new SpeechSynthesisUtterance(reply);
+speech.lang = "en-IN";
+speech.rate = 1;
+window.speechSynthesis.speak(speech);
   document.getElementById("userMsg").value = "";
 
   chatBox.scrollTop = chatBox.scrollHeight;
@@ -338,5 +341,30 @@ window.setMode = function(mode) {
     chatBox.scrollTop = chatBox.scrollHeight;
 
   }, 800);
+
+};
+window.startVoice = function () {
+
+  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+  if (!SpeechRecognition) {
+    alert("Your browser does not support Voice AI");
+    return;
+  }
+
+  const recognition = new SpeechRecognition();
+
+  recognition.lang = "en-IN"; // Hindi + English support
+  recognition.interimResults = false;
+
+  recognition.start();
+
+  recognition.onresult = function (event) {
+
+    const voiceText = event.results[0][0].transcript;
+
+    document.getElementById("userMsg").value = voiceText;
+
+  };
 
 };
